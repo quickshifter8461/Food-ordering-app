@@ -1,0 +1,25 @@
+{
+  "name": "eat-at-home",
+  "version": "1.0.0",
+  "description": "food ordering app",
+  "scripts": {
+    "test": "jest",
+    "start": "npx parcel index.html",
+    "build": "npx parcel build index.html"
+  },
+  "author": "vishnu",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "parcel": "^2.12.0",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}
