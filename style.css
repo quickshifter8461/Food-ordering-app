@@ -1,73 +1,129 @@
-.app{
-    min-height: 100vh;
-    padding: 0;
-    margin: 0;
-}
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
+* {
+  
+  font-family: ProximaNova, Arial, "Helvetica Neue", sans serif;
 }
 
-.logo{
-    width: 5rem;
+.app {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
-.nav-link{
-   padding: 10px 0 0 20px; 
+.logo {
+  width: 5rem;
+}
+
+.nav-link {
+  padding: 10px 0 0 20px;
 }
 .nav-link > ul {
-    list-style: none;
-    display: flex;
-    padding: 0px 20px;
+  list-style: none;
+  display: flex;
+  padding: 0px 20px;
 }
 
-.nav-link > ul > li{
-    padding: 0 20px;
-    font-size: 1.2rem;
+.nav-link > ul > li {
+  padding: 0 20px;
+  font-size: 1.2rem;
 }
 
-li > a{
-    text-decoration: none;
+li > a {
+  text-decoration: none;
 }
 
-.search{
-    padding: 20px;
+.search {
+  padding: 20px;
 }
-.search > input{
-    width: 75%;
-    height: 25px;
-    margin-right: 25px;
+.search > input {
+  width: 75%;
+  height: 25px;
+  margin-right: 25px;
 }
-.search >button {
-    width: 20%;
-    height: 30px;
-}
-.card{
-    margin: 10px;
-    padding: 5px;
-    width: 250px;
-    background-color: #f0f0f0;
-}
-.card:hover{
-    border: 1px solid black;
-    cursor: pointer;
-}
-.cardImage{
-    width: 100%;
-    height: 200px;
-}
-.cardBody{
-    padding: 20px;
-}
-.cardcontainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.search > button {
+  width: 20%;
+  height: 30px;
 }
 
-.footer{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 50px;
+.card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+.cardImage {
+  width: 100%;
+  height: 200px;
+}
+.cardBody {
+  padding: 20px;
+}
+.cardcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+
+.body {
+  background: #f5f5f5;
+}
+
+.card {
+  position: relative;
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 6px;
+  
+  overflow: hidden;
+  width: 350px;
+  margin: 40px auto;
+
+  .shimmerBG {
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+    background-size: 1200px 100%;
+  }
+}
+.media {
+  height: 200px;
+}
+
+.p-32 {
+  padding: 32px;
+}
+
+.title-line {
+  height: 24px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 20px;
+}
+
+.content-line {
+  height: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.end {
+  width: 40%;
+}
+
+.m-t-24 {
+  margin-top: 24px;
 }
