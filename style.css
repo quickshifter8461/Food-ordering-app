@@ -1,7 +1,4 @@
-* {
-  
-  font-family: ProximaNova, Arial, "Helvetica Neue", sans serif;
-}
+
 
 .app {
   min-height: 100vh;
@@ -45,9 +42,9 @@ li > a {
   margin-right: 25px;
 }
 .search > button {
-  width: 20%;
-  height: 30px;
+ margin-right: 10px;
 }
+
 
 .card:hover {
   border: 1px solid black;
@@ -127,3 +124,4 @@ li > a {
 .m-t-24 {
   margin-top: 24px;
 }
+
