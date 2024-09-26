@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resMenu, setResMenu] = useState(null);
-
   const { resId } = useParams();
   console.log(resId);
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const resMenu = useRestaurantMenu(resId);
+  
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=11.2587531&lng=75.78041&restaurantId=${resId}&submitAction=ENTER`
-    );
-    const response = await data.json();
-
-    setResMenu(response.data);
-  };
-
-  if (resMenu === null) return <Shimmer />;
-
+  if (!resMenu) return <Shimmer />;
+console.log(resMenu)
   const {
     name,
     areaName,
@@ -33,12 +21,12 @@ const RestaurantMenu = () => {
     costForTwoMessage,
   } = resMenu?.cards[2]?.card?.card?.info;
 
-  const { itemCards, title } =
-    resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  console.log(itemCards[1].card.info);
+  const { cards, itemCards, title } =
+    resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card 
+  console.log(resMenu?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR)
   return (
     <div>
-      <div className="card w-75 mb-3">
+      <div className="card w-75 mb-3 menuInfo">
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <div className="d-flex">
@@ -112,13 +100,13 @@ const RestaurantMenu = () => {
         </div>
         <ul className="list-group ">
           {itemCards.map((item) => (
-            <div key={item.card.info.id} className="card mb-3 w-100">
+            <div key={item.card.info.id} className="card mb-3 w-100 menuInfo">
               <div className="row g-0">
                 <div className="col-md-4">
                   {item.card.info.imageId ? (
                     <img
                       src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_600,h_600,c_fit/${item.card.info.imageId}`}
-                      className="img-fluid rounded-start"
+                      className="menu-image"
                       alt={item.card.info.name}
                     />
                   ) : (

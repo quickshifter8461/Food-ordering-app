@@ -1,15 +1,16 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Error from "./components/Error";
-import About from "./components/About";
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 
-
+// lazy loading for optimizing app
+const About = lazy(()=> import("./components/About"))
 const AppLayout = () => {
   return (
     <div className="app">
@@ -32,7 +33,8 @@ const appRoutes = createBrowserRouter([
 
       {
         path:"/about",
-        element: <About/>
+        // suspense for loading a lazy loading component 
+        element:  <Suspense fallback={<h1>Loading</h1>}><About/></Suspense>
       },
       {
         path: "/contact",
